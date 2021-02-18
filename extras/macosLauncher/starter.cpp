@@ -44,6 +44,7 @@ int main(int argc, char* argv[])
         {
             const bfs::path tmpPath = "/tmp/rttr.command";
             boost::nowide::ofstream file(tmpPath);
+            file << "#!/bin/sh" << std::endl;
             file << "\"" << RTTRCONFIG.ExpandPath("<RTTR_BIN>/starter") << "\" interminal" << std::endl;
             file << "rm " << tmpPath << std::endl;
             file.close();
